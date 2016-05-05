@@ -10,6 +10,8 @@ const PATHS = {
     build: path.join(__dirname, 'build')
 };
 
+process.env.BABEL_ENV = TARGET;
+
 const common = {
     // Entry accepts a path or an object of entries. We'll be using the
     // latter form given it's convenient with more complex configurations.
@@ -42,7 +44,7 @@ const common = {
           // Parse only app files! Without this it will go through entire project.
           // In addition to being slow, that will most likely result in an error.
           include: PATHS.app
-        }        
+        }
       ]
     }
 };
