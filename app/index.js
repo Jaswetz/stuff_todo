@@ -1,7 +1,12 @@
-require('./main.css');
-
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App.jsx';
+import App from './components/App';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+if(process.env.NODE_ENV !== 'production') {
+  React.Perf = require('react-addons-perf');
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('app')
+);
